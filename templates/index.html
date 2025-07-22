@@ -2,11 +2,11 @@
 
 {% block pagecontent %}
         {% block sidebar %}
-            <div class="sidebar">
+            <header class="header">
                 <div class="">
                     <div class="sidebar-about">
                         {% block sidebar_about %}
-                            <a href="{{ config.base_url }}"><h1>{{ config.title }}</h1></a>
+                            <a href="{{ config.base_url }}" style="text-decoration: none"><h1>{{ config.title }}</h1></a>
                             {% if config.description %}
                             <p class="lead">{{config.description}}</p>
                             {% endif %}
@@ -18,7 +18,13 @@
                         {% endblock sidebar_nav %}
                     </ul>
                 </div>
-            </div>
+                <div>
+                  {% for menu in config.extra.menu %}
+                  <a href="{{ get_url(path=menu.url) }}">{{ menu.name }}</a>
+                  {% endfor %}
+                </div>
+</ul>
+            </header>
         {% endblock sidebar %}
 
         <div class="content container">

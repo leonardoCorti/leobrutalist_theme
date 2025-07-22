@@ -2,4 +2,4 @@
 
 - [ ] style
 - [ ] RSS
-- [ ] different styles for different sections
+- [X] different styles for different sections
